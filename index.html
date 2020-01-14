@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="showcase">
+      <h1>[ 3, 2, 1, Sort! ]</h1>
+    </header>
+    <div class="nav nav_one">
+      <button class="btn" id="bblBtn">Bubble Sort</button>
+      <button class="btn" id="insBtn">Insertion Sort</button>
+      <button class="btn" id="slcBtn">Selction Sort</button>
+      <button class="btn" id="mrgBtn">Merge Sort</button>
+      <button class="btn" id="qukBtn">Quick Sort</button>
+    </div>
+    <div class="nav nav_two">
+      <div class="speed">
+        <h3>speed:</h3>
+        <button class="btn" id="half">0.5x</button>
+        <button class="btn" id="one">1x</button>
+        <button class="btn" id="one&half">1.5x</button>
+      </div>
+      <div class="size">
+        <h3>list size:</h3>
+        <input type="text" placeholder="10 - 30 items" />
+      </div>
+      <div class="actions">
+        <button class="btn" id="start">Start</button>
+        <button class="btn" id="pause">Pause</button>
+        <button class="btn" id="restart">Restart</button>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="code"><code>
+        <figure>
+          <figcaption>Bubble Sort (Javascript)</figcaption>
+          <pre>
+            <code>
+function bubbleSort(array) {
+  let len = array.length;
+  let swaped;
+  do {
+    swaped = false;
+    for (let i = 0; i < len - 1; i++) {
+      if (array[i] > array[i + 1]) {
+        [array[i], array[i + 1]] = [array[i + 1], array[i]];
+        swaped = true;
+      }
+    }
+    len--;
+  } while (swaped === true);
+  return array;
+}
+            </code>
+          </pre>
+        </figure></div>
+      <div class="info">
+      </div>
+      <div class="display">
+      </div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
