@@ -11,7 +11,7 @@ body {
 }
 
 .showcase {
-  width: 100vw;
+  width: 100%;
   min-height: 30vh;
   background-image: url(./assets/showcasepic.jpg);
   background-repeat: no-repeat;
@@ -78,26 +78,43 @@ input {
 
 .wrapper {
   height: 70vh;
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 2fr 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-template-areas:
+    "code display display display"
+    "code display display display"
+    "info display display display";
+}
+
+.display {
+  position: relative;
+  grid-area: display;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
 }
 
 .code {
-  grid-area: 1 / 1 / 2 / 2;
+  grid-area: code;
   padding: 20px;
   background-color: rgb(0, 0, 0);
   color: white;
-  width: 35vw;
   font-size: 1rem;
 }
 
 .info {
-  grid-area: 2 / 1 / 3 / 2;
+  grid-area: info;
+  padding: 20px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  height: 100%;
+  font-size: 1rem;
 }
 
-.display {
-  grid-area: 1 / 2 / 3 / 3;
+.brick {
+  margin-right: 1px;
+  margin-bottom: 5%;
+  width: 2px;
+  background-color: rgb(0, 0, 0);
 }
