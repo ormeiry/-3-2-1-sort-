@@ -4,15 +4,18 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto Mono", monospace;
-  overflow-x: hidden;
 }
 
 body {
   background-color: rgb(224, 224, 224);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .showcase {
-  width: 100%;
+  width: 98vw;
   min-height: 30vh;
   background-image: url(./assets/showcasepic.jpg);
   background-repeat: no-repeat;
@@ -48,6 +51,7 @@ body {
   justify-content: space-around;
   align-items: center;
   padding: 10px;
+  width: 98vw;
 }
 
 .nav h3 {
@@ -66,51 +70,35 @@ input {
 }
 
 .nav_two {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   background-color: rgb(207, 188, 79);
 }
 
-.speed,
-.size,
-.actions {
+.speed {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
-.wrapper {
-  height: 80vh;
-  width: 100vw;
-  display: grid;
-  grid-template-areas:
-    "code display display display"
-    "code display display display"
-    "info display display display";
+.sliderWrap {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #000000;
+  outline: none;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
 }
 
 .display {
-  position: relative;
-  grid-area: display;
-  display: flex;
-  justify-content: stretch;
-  height: 100%;
-  width: 90vw;
-}
-
-.code {
-  grid-area: code;
-  padding: 20px;
-  background-color: rgb(0, 0, 0);
-  color: white;
-  font-size: 1rem;
-  width: 10vw;
-}
-
-.info {
-  grid-area: info;
-  padding: 20px;
-  background-color: rgb(0, 0, 0);
-  color: white;
-  height: 100%;
-  font-size: 1rem;
-  width: 10vw;
+  height: 80vh;
+  width: 98vw;
 }

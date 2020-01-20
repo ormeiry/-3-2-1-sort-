@@ -25,28 +25,22 @@
         <h3>speed:</h3>
         <button class="btn" id="half">0.5x</button>
         <button class="btn" id="one">1x</button>
-        <button class="btn" id="oneAndhalf">1.5x</button>
+        <button class="btn" id="oneAndhalf">2x</button>
       </div>
-      <div class="size">
-        <h3>list size:</h3>
-        <input type="text" placeholder="10 - 30 items" id="input" />
-        <button class="btn" id="crtBtn">Create</button>
-      </div>
-      <div class="actions">
-        <button class="btn" id="start">Start</button>
-        <button class="btn" id="pause">Pause</button>
-        <button class="btn" id="restart">Restart</button>
+      <div class="sliderWrap">
+        <h3>Array Size</h3>
+        <input
+          type="range"
+          min="5"
+          max="15"
+          value="10"
+          class="slider"
+          id="myRange"
+        />
       </div>
     </div>
 
-    <div class="wrapper">
-      <div class="code"></div>
-
-      <div class="info">
-        O(n)
-      </div>
-      <div class="display" id="display"></div>
-    </div>
+    <div class="display" id="display"></div>
 
     <script src="./main.js"></script>
     <script src="./sketch.js"></script>
