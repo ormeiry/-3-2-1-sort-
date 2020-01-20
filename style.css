@@ -73,7 +73,7 @@ input {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: rgb(207, 188, 79);
+  background-color: rgb(240, 240, 240);
 }
 
 .speed {
