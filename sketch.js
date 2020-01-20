@@ -98,7 +98,7 @@ function draw() {
     stroke(0);
     fill(255);
 
-    if (states[i] == 0 || stillSorting === false) {
+    if (states[i] == 0) {
       fill(40, 190, 130);
     } else if (states[i] == 1) {
       // Element currently sorting
@@ -143,7 +143,7 @@ async function quickSort(arr, start, end) {
 // Asynchronous Definition of Partition Function
 async function partition(arr, start, end) {
   for (let i = start; i < end; i++) {
-    states[i] = 1;
+    states[i] = -1;
   }
 
   let pivotIndex = start;
@@ -162,7 +162,7 @@ async function partition(arr, start, end) {
   await swap(arr, pivotIndex, end);
 
   for (let i = start; i < end; i++) {
-    states[i] = -1;
+    states[i] = 1;
   }
 
   return pivotIndex;
