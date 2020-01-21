@@ -16,7 +16,7 @@ body {
 
 .showcase {
   width: 98vw;
-  min-height: 30vh;
+  min-height: 20vh;
   background-image: url(./assets/showcasepic.jpg);
   background-repeat: no-repeat;
   background-position: bottom;
@@ -26,7 +26,7 @@ body {
 
 .showcase h1 {
   position: absolute;
-  bottom: 1em;
+  bottom: 0.5em;
   left: 1em;
   font-size: 5rem;
   font-weight: 700;
@@ -39,6 +39,7 @@ body {
   color: whitesmoke;
   font-size: 1em;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -99,6 +100,70 @@ input {
 }
 
 .display {
-  height: 80vh;
+  height: 63.5vh;
   width: 98vw;
+}
+
+@media screen and (max-width: 768px) {
+  .showcase h1 {
+    position: absolute;
+    bottom: 1.5em;
+    left: 1em;
+    font-size: 2rem;
+  }
+
+  .btn {
+    padding: 2px 13px;
+  }
+  .display {
+    height: 69vh;
+    width: 98vw;
+  }
+
+  .nav h3 {
+    font-size: 1rem;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .showcase {
+    width: 98vw;
+    min-height: 10vh;
+    background-image: url(./assets/showcasepic.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    position: relative;
+  }
+
+  .showcase h1 {
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+    font-size: 1.3rem;
+  }
+
+  .btn {
+    padding: 1px 9px;
+    font-size: 0.7em;
+  }
+  .display {
+    height: 73vh;
+    width: 98vw;
+  }
+
+  .nav h3 {
+    font-size: 0.7rem;
+    margin-right: 8px;
+  }
+
+  .speed {
+    display: block;
+  }
+
+  .sliderWrap {
+    display: block;
+    margin-left: 15px;
+  }
 }

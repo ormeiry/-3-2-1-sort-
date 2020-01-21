@@ -1,3 +1,5 @@
+//Dom elemtns
+
 let width = document.querySelector("#display").offsetWidth;
 let height = document.querySelector("#display").offsetHeight;
 const bblBtn = document.querySelector("#bblBtn");
@@ -8,14 +10,17 @@ const insBtn = document.querySelector("#insBtn");
 const halfSpeedBtn = document.querySelector("#half");
 const oneSpeedBtn = document.querySelector("#one");
 const timesTwoSpeedBtn = document.querySelector("#oneAndhalf");
+const arrayGenBtn = document.querySelector("#arrayGenBtn");
 const slider = document.querySelector("#myRange");
+////////////////////////////////////////////////////////////////
 
-// Set Global letiables
+// Set Global variables
 let values = [];
 let w = 5;
 let stillSorting = false;
 let speed = 5;
 
+//genrates a random array with the user input size
 slider.addEventListener("input", e => {
   if (!stillSorting) {
     w = e.target.value;
@@ -24,9 +29,9 @@ slider.addEventListener("input", e => {
       values[i] = float(random(height));
     }
   }
-  console.log(stillSorting);
 });
 
+//Pressed button events for speed, array generate and sort choice
 halfSpeedBtn.addEventListener("click", () => {
   speed = speed * 2;
 });
@@ -39,9 +44,13 @@ timesTwoSpeedBtn.addEventListener("click", () => {
   speed = speed * 0.5;
 });
 
-// To store the state of each bar
-// in order to change the color
-let states = [];
+arrayGenBtn.addEventListener("click", () => {
+  values = new Array(floor(width / w));
+  for (let i = 0; i < values.length; i++) {
+    values[i] = float(random(height));
+  }
+  stillSorting = false;
+});
 
 bblBtn.addEventListener("click", () => {
   if (!stillSorting) {
@@ -85,11 +94,11 @@ function setup() {
 
 // Definition of draw function
 function draw() {
-  background(51);
+  background(0);
 
   for (let i = 0; i < values.length; i++) {
     stroke(0);
-    fill("#add8e6");
+    fill(239, 192, 80);
 
     rect(i * w, height - values[i], w, values[i]);
   }
@@ -128,7 +137,6 @@ async function quickSort(arr, start, end) {
 async function partition(arr, start, end) {
   let pivotIndex = start;
   let pivotValue = arr[end];
-  states[pivotIndex] = 0;
 
   for (let i = start; i < end; i++) {
     if (arr[i] < pivotValue) {
@@ -162,7 +170,7 @@ async function bubbleSort(arr, start, end) {
   return arr;
 }
 
-//Merge sort algorithem
+//Definition of Merge sort
 function mergeSort(arr) {
   // create copy of the array
   c = arr.slice();
@@ -196,7 +204,7 @@ async function mergeSortSlice(arr, start, end) {
     if (i == j) j++;
 
     // copy back the current state of the sorting
-    stillSorting = true;
+    // stillSorting = true;
     values = arr.slice();
 
     // slow down
@@ -208,7 +216,7 @@ async function mergeSortSlice(arr, start, end) {
   }
 }
 
-//Selection sort algorithem
+//Definition of Selection sort
 async function selectionSort(array) {
   for (let i = 0; i < array.length - 1; i++) {
     let minIndex = i;
@@ -227,7 +235,7 @@ async function selectionSort(array) {
   return array;
 }
 
-//Insertion sort algorithem
+//Definition of Insertion sort
 async function insertionSort(array) {
   for (i = 1; i < array.length; i++) {
     let temp;
