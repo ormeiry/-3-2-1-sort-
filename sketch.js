@@ -1,5 +1,4 @@
 //Dom elemtns
-
 let width = document.querySelector("#display").offsetWidth;
 let height = document.querySelector("#display").offsetHeight;
 const bblBtn = document.querySelector("#bblBtn");
@@ -16,7 +15,7 @@ const slider = document.querySelector("#myRange");
 
 // Set Global variables
 let values = [];
-let w = 5;
+let w = 8;
 let stillSorting = false;
 let speed = 5;
 
@@ -33,15 +32,18 @@ slider.addEventListener("input", e => {
 
 //Pressed button events for speed, array generate and sort choice
 halfSpeedBtn.addEventListener("click", () => {
-  speed = speed * 2;
+  speed = 10;
+  console.log(speed);
 });
 
 oneSpeedBtn.addEventListener("click", () => {
-  speed = 10;
+  speed = 5;
+  console.log(speed);
 });
 
 timesTwoSpeedBtn.addEventListener("click", () => {
-  speed = speed * 0.5;
+  speed = 2.5;
+  console.log(speed);
 });
 
 arrayGenBtn.addEventListener("click", () => {

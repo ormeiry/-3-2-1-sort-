@@ -130,10 +130,6 @@ input {
   .showcase {
     width: 98vw;
     min-height: 10vh;
-    background-image: url(./assets/showcasepic.jpg);
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: cover;
     position: relative;
   }
 
