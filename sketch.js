@@ -33,17 +33,14 @@ slider.addEventListener("input", e => {
 //Pressed button events for speed, array generate and sort choice
 halfSpeedBtn.addEventListener("click", () => {
   speed = 10;
-  console.log(speed);
 });
 
 oneSpeedBtn.addEventListener("click", () => {
   speed = 5;
-  console.log(speed);
 });
 
 timesTwoSpeedBtn.addEventListener("click", () => {
   speed = 2.5;
-  console.log(speed);
 });
 
 arrayGenBtn.addEventListener("click", () => {
