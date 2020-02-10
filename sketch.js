@@ -1,17 +1,5 @@
-//Dom elemtns
-let width = document.querySelector("#display").offsetWidth;
-let height = document.querySelector("#display").offsetHeight;
-const bblBtn = document.querySelector("#bblBtn");
-const qukBtn = document.querySelector("#qukBtn");
-const mrgBtn = document.querySelector("#mrgBtn");
-const slcBtn = document.querySelector("#slcBtn");
-const insBtn = document.querySelector("#insBtn");
-const halfSpeedBtn = document.querySelector("#half");
-const oneSpeedBtn = document.querySelector("#one");
-const timesTwoSpeedBtn = document.querySelector("#oneAndhalf");
-const arrayGenBtn = document.querySelector("#arrayGenBtn");
-const slider = document.querySelector("#myRange");
-////////////////////////////////////////////////////////////////
+let width = document.querySelector('#display').offsetWidth;
+let height = document.querySelector('#display').offsetHeight;
 
 // Set Global variables
 let values = [];
@@ -20,7 +8,7 @@ let stillSorting = false;
 let speed = 5;
 
 //genrates a random array with the user input size
-slider.addEventListener("input", e => {
+document.querySelector('#myRange').addEventListener('input', e => {
   if (!stillSorting) {
     w = e.target.value;
     values = new Array(floor(width / w));
@@ -31,19 +19,19 @@ slider.addEventListener("input", e => {
 });
 
 //Pressed button events for speed, array generate and sort choice
-halfSpeedBtn.addEventListener("click", () => {
+document.querySelector('#half').addEventListener('click', () => {
   speed = 10;
 });
 
-oneSpeedBtn.addEventListener("click", () => {
+document.querySelector('#one').addEventListener('click', () => {
   speed = 5;
 });
 
-timesTwoSpeedBtn.addEventListener("click", () => {
+document.querySelector('#oneAndhalf').addEventListener('click', () => {
   speed = 2.5;
 });
 
-arrayGenBtn.addEventListener("click", () => {
+document.querySelector('#arrayGenBtn').addEventListener('click', () => {
   values = new Array(floor(width / w));
   for (let i = 0; i < values.length; i++) {
     values[i] = float(random(height));
@@ -51,35 +39,35 @@ arrayGenBtn.addEventListener("click", () => {
   stillSorting = false;
 });
 
-bblBtn.addEventListener("click", () => {
+document.querySelector('#bblBtn').addEventListener('click', () => {
   if (!stillSorting) {
     bubbleSort(values, 0, values.length);
     stillSorting = true;
   }
 });
 
-qukBtn.addEventListener("click", () => {
+document.querySelector('#qukBtn').addEventListener('click', () => {
   if (!stillSorting) {
     quickSort(values, 0, values.length);
     stillSorting = true;
   }
 });
 
-mrgBtn.addEventListener("click", () => {
+document.querySelector('#mrgBtn').addEventListener('click', () => {
   if (!stillSorting) {
     mergeSort(values);
     stillSorting = true;
   }
 });
 
-slcBtn.addEventListener("click", () => {
+document.querySelector('#slcBtn').addEventListener('click', () => {
   if (!stillSorting) {
     selectionSort(values);
     stillSorting = true;
   }
 });
 
-insBtn.addEventListener("click", () => {
+document.querySelector('#insBtn').addEventListener('click', () => {
   if (!stillSorting) {
     insertionSort(values);
     stillSorting = true;
@@ -88,7 +76,7 @@ insBtn.addEventListener("click", () => {
 
 function setup() {
   const cnv = createCanvas(width, height);
-  cnv.parent("display");
+  cnv.parent('display');
 }
 
 // Definition of draw function
