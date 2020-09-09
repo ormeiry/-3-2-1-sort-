@@ -1,5 +1,5 @@
-let width = document.querySelector('#display').offsetWidth;
-let height = document.querySelector('#display').offsetHeight;
+let width = document.querySelector("#display").offsetWidth;
+let height = document.querySelector("#display").offsetHeight;
 
 // Set Global variables
 let values = [];
@@ -9,7 +9,7 @@ let speed = 5;
 const fr = 60;
 
 //genrates a random array with the user input size
-document.querySelector('#myRange').addEventListener('input', (e) => {
+document.querySelector("#myRange").addEventListener("input", (e) => {
   if (!stillSorting) {
     w = e.target.value;
     values = new Array(floor(width / w));
@@ -20,19 +20,52 @@ document.querySelector('#myRange').addEventListener('input', (e) => {
 });
 
 //Pressed button events for speed, array generate and sort choice
-document.querySelector('#half').addEventListener('click', () => {
-  speed = 10;
+document.querySelectorAll(".btn-speed").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    switch (btn.id) {
+      case "half":
+        speed = 10;
+        break;
+      case "one":
+        speed = 5;
+        break;
+      case "oneAndhalf":
+        speed = 2.5;
+        break;
+      default:
+        speed = 5;
+        break;
+    }
+  });
 });
 
-document.querySelector('#one').addEventListener('click', () => {
-  speed = 5;
+document.querySelectorAll(".btn-sort").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    if (!stillSorting) {
+      stillSorting = true;
+      switch (btn.id) {
+        case "bblBtn":
+          bubbleSort(values, 0, values.length);
+          break;
+        case "qukBtn":
+          quickSort(values, 0, values.length);
+          break;
+        case "mrgBtn":
+          mergeSort(values);
+          break;
+        case "slcBtn":
+          selectionSort(values);
+          break;
+        case "insBtn":
+          insertionSort(values);
+          break;
+        default:
+          return;
+      }
+    }
+  });
 });
-
-document.querySelector('#oneAndhalf').addEventListener('click', () => {
-  speed = 2.5;
-});
-
-document.querySelector('#arrayGenBtn').addEventListener('click', () => {
+document.querySelector("#arrayGenBtn").addEventListener("click", () => {
   values = new Array(floor(width / w));
   for (let i = 0; i < values.length; i++) {
     values[i] = float(random(height));
@@ -40,44 +73,9 @@ document.querySelector('#arrayGenBtn').addEventListener('click', () => {
   stillSorting = false;
 });
 
-document.querySelector('#bblBtn').addEventListener('click', () => {
-  if (!stillSorting) {
-    bubbleSort(values, 0, values.length);
-    stillSorting = true;
-  }
-});
-
-document.querySelector('#qukBtn').addEventListener('click', () => {
-  if (!stillSorting) {
-    quickSort(values, 0, values.length);
-    stillSorting = true;
-  }
-});
-
-document.querySelector('#mrgBtn').addEventListener('click', () => {
-  if (!stillSorting) {
-    mergeSort(values);
-    stillSorting = true;
-  }
-});
-
-document.querySelector('#slcBtn').addEventListener('click', () => {
-  if (!stillSorting) {
-    selectionSort(values);
-    stillSorting = true;
-  }
-});
-
-document.querySelector('#insBtn').addEventListener('click', () => {
-  if (!stillSorting) {
-    insertionSort(values);
-    stillSorting = true;
-  }
-});
-
 function setup() {
   const cnv = createCanvas(width, height);
-  cnv.parent('display');
+  cnv.parent("display");
   frameRate(fr);
 }
 
