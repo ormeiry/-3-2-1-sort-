@@ -11,3 +11,6 @@ Don't forget to pick the sorting algorithm itself :)
 - CSS
 - JavaScript 
 - p5 JavaScript library for the animations
+
+<img src="sort.png" alt="sortimage" width="700"/>
+
