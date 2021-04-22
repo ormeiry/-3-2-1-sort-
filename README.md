@@ -1,6 +1,8 @@
 # -3-2-1-sort-
 ## A sorting visualization web app
 
+### I created this project after finishing an amazing Udemy course on data structure & algorithms.
+
 ### What can you do?
 generate an array,
 Pick the size of the array and the speed you want the sorting algorithm to move in!
